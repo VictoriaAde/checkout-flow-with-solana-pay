@@ -1,10 +1,12 @@
 import React from "react";
 import { PropsWithChildren } from "react";
 
-export const Navbar = () => {
+export default function Navbar({ children }: PropsWithChildren<{}>) {
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <nav className="flex justify-start">
+      <h1 className="my-8 self-center text-white text-4xl font-extrabold text-transparent">
+        {children}
+      </h1>
+    </nav>
   );
-};
+}

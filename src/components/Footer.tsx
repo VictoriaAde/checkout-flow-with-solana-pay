@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="flex w-full justify-center border-t-2 border-gray-900 py-12 h-10">
+    <footer className="flex w-full justify-center border-t-2 border-[#232323] py-10 h-10 text-sm underline">
       <a
-        href="https://www.pointer.gg?utm_source=solana-pay"
+        href="https://www.linkedin.com/in/victoria-adedayo/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Learn web3 dev and earn crypto rewards at <span>Pointer</span>
+        Made by <span>Victoria Adedayo</span>
       </a>
     </footer>
   );
