@@ -44,7 +44,7 @@ export default function Products({ submitTarget, enabled }: Props) {
                   </p>
                   <p className="my-4">
                     <span className="mt-4 text-xl font-bold text-white opacity-80">
-                      {product.priceSol} SOL
+                      ${product.priceUsd}
                     </span>
                     {product.unitName && (
                       <span className="text-sm text-white opacity-50">

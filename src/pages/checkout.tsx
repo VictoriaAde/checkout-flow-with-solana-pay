@@ -9,6 +9,7 @@ import {
   MakeTransactionInputData,
   MakeTransactionOutputData,
 } from "./api/makeTransaction";
+import { findReference, FindReferenceError } from "@solana/pay";
 
 export default function Checkout() {
   const router = useRouter();
@@ -39,7 +40,7 @@ export default function Checkout() {
   searchParams.append("reference", reference.toString());
 
   // Use our API to fetch the transaction for the selected items
-  const getTransaction = async () => {
+  async function getTransaction() {
     if (!publicKey) {
       return;
     }
@@ -73,40 +74,57 @@ export default function Checkout() {
     setTransaction(transaction);
     setMessage(json.message);
     console.log(transaction);
-  };
+  }
 
   useEffect(() => {
-    if (publicKey) {
-      getTransaction();
-    }
+    getTransaction();
   }, [publicKey]);
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      try {
+        // Check if there is any transaction for the reference
+        const signatureInfo = await findReference(connection, reference);
+        router.push("/confirmed");
+      } catch (e) {
+        if (e instanceof FindReferenceError) {
+          // No transaction found yet, ignore this error
+          return;
+        }
+        console.error("Unknown error", e);
+      }
+    }, 500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [reference, router]);
 
   if (!publicKey) {
     return (
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col gap-8 items-center mt-28">
         <div>
-          <BackLink href="/">Cancel</BackLink>
+          <BackLink href="/">Go back</BackLink>
         </div>
 
         <WalletMultiButton />
 
-        <p>You need to connect your wallet to make transactions</p>
+        <p>You need to connect your wallet to make transactions.</p>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col gap-8 items-center mt-28">
       <div>
-        <BackLink href="/">Cancel</BackLink>
+        <BackLink href="/">Go back</BackLink>
       </div>
 
       <WalletMultiButton />
 
       {message ? (
-        <p>{message} Please approve the transaction using your wallet</p>
+        <p>{message} Please approve the transaction using your wallet.</p>
       ) : (
-        <p>
+        <p className="flex gap-2">
           Creating transaction... <Loading />
         </p>
       )}

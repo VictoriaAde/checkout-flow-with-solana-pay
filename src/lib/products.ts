@@ -37,8 +37,8 @@ export const products = [
     name: "Cocoa solids",
     description: "A large pack of chocolates",
     unitName: "pack",
-    priceSol: 0.15,
-    priceUsd: 15,
+    priceSol: 0.05,
+    priceUsd: 5,
     image:
       "https://res.cloudinary.com/freakingspicy/image/upload/v1693749149/chocoInc/cocoasolids_ujbrum.jpg",
     alt: "Cocoa solids",
@@ -60,8 +60,8 @@ export const products = [
     name: "Couverture chocolate",
     description: "A large pack of Couverture chocolate",
     unitName: "pack",
-    priceSol: 0.15,
-    priceUsd: 15,
+    priceSol: 0.1,
+    priceUsd: 10,
     image:
       "https://res.cloudinary.com/freakingspicy/image/upload/v1693749158/chocoInc/Couverture-chocolate_xksm95.jpg",
     alt: "Couverture chocolate",

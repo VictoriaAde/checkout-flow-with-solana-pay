@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PropsWithChildren } from "react";
+import { ImArrowLeft } from "react-icons/im";
 
 interface Props {
   href: string;
@@ -7,8 +8,8 @@ interface Props {
 
 export default function BackLink({ children, href }: PropsWithChildren<Props>) {
   return (
-    <Link href={href}>
-      ⬅️&nbsp;&nbsp;
+    <Link href={href} className="flex items-center gap-2 ">
+      <ImArrowLeft />
       <span className="underline hover:no-underline">{children}</span>
     </Link>
   );
