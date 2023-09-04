@@ -39,7 +39,7 @@ export default function Checkout() {
   searchParams.append("reference", reference.toString());
 
   // Use our API to fetch the transaction for the selected items
-  async function getTransaction() {
+  const getTransaction = async () => {
     if (!publicKey) {
       return;
     }
@@ -73,10 +73,12 @@ export default function Checkout() {
     setTransaction(transaction);
     setMessage(json.message);
     console.log(transaction);
-  }
+  };
 
   useEffect(() => {
-    getTransaction();
+    if (publicKey) {
+      getTransaction();
+    }
   }, [publicKey]);
 
   if (!publicKey) {

@@ -33,7 +33,7 @@ export const products = [
     alt: "Kit Kat",
   },
   {
-    id: "2",
+    id: "3",
     name: "Cocoa solids",
     description: "A large pack of chocolates",
     unitName: "pack",
@@ -45,7 +45,7 @@ export const products = [
   },
 
   {
-    id: "2",
+    id: "4",
     name: "CadBury",
     description: "A large pack of Cadbury",
     unitName: "pack",
@@ -56,7 +56,7 @@ export const products = [
     alt: "CadBury",
   },
   {
-    id: "2",
+    id: "5",
     name: "Couverture chocolate",
     description: "A large pack of Couverture chocolate",
     unitName: "pack",
