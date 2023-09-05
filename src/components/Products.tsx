@@ -23,7 +23,7 @@ export default function Products({ submitTarget, enabled }: Props) {
           {products.map((product) => {
             return (
               <div
-                className="rounded-md bg-[#010101] border  border-[#232323] text-center p-8"
+                className="rounded-md bg-[#010101] border  border-[#232323] text-center py-8 px-4"
                 key={product.id}
               >
                 <div className="mb-6">
@@ -32,7 +32,7 @@ export default function Products({ submitTarget, enabled }: Props) {
                     alt={product.alt}
                     width="200"
                     height="100"
-                    className="w-full h-96"
+                    className="w-full h-72 md:h-96"
                   />
                 </div>
                 <div>

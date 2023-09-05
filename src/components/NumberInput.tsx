@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { BsPlus } from "react-icons/bs";
+import { BiMinus } from "react-icons/bi";
 
 interface Props {
   name: string;
@@ -40,7 +42,9 @@ export default function NumberInput({ name, formRef }: Props) {
         onClick={decrement}
         onKeyDown={handleKeyboard}
       >
-        <span className="m-auto text-2xl font-thin">−</span>
+        <span className="m-auto text-2xl font-thin">
+          <BiMinus />
+        </span>
       </button>
       <input
         type="number"
@@ -48,7 +52,7 @@ export default function NumberInput({ name, formRef }: Props) {
         value={number}
         onChange={(e) => setNumber(Number(e.target.value))}
         min={0}
-        className="w-12 border-none focus:ring-0 text-center bg-white opacity-70 text-black font-bold"
+        className="w-full text-center border-none focus:ring-0 text-white bg-black font-bold"
       />
       <button
         type="button"
@@ -57,7 +61,9 @@ export default function NumberInput({ name, formRef }: Props) {
         onClick={increment}
         onKeyDown={handleKeyboard}
       >
-        <span className="m-auto text-2xl font-thin">+</span>
+        <span className="m-auto text-2xl font-thin">
+          <BsPlus />
+        </span>
       </button>
     </div>
   );
