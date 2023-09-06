@@ -18,7 +18,7 @@ export default function Confirmed() {
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div style={{ height: "20rem", width: "20rem" }}>
+      <div style={{ height: "12rem", width: "12rem" }}>
         <CircularProgressbar
           value={percentage}
           text={text}

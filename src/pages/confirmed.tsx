@@ -7,17 +7,19 @@ interface PaymentSuccessProps {
 
 const PaymentSuccess: React.FC<PaymentSuccessProps> = () => {
   return (
-    <div className="flex flex-col gap-8 items-center mt-28">
+    <div className="flex flex-col gap-4 items-center mt-28">
       <BackLink href="/">Home</BackLink>
 
-      <div className="bg-green-200 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-green-700 mb-4">
+      <div className="bg-none p-8 rounded-lg shadow-md text-center">
+        <h2 className="text-2xl font-bold text-[#50EA95] mb-4">
           Payment Successful
         </h2>
-        <p className="text-lg text-green-800">
+        <h3 className="text-lg text-[#50EA95] mb-8">
           Thank you for your purchase! Your payment was successful.
-        </p>
-        <Confirmed />
+        </h3>
+        <div className="">
+          <Confirmed />
+        </div>
         {/* You can add more information or links as needed */}
       </div>
     </div>
