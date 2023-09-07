@@ -7,7 +7,7 @@ export const products = [
     priceSol: 0.05,
     priceUsd: 5,
     image:
-      "https://res.cloudinary.com/freakingspicy/image/upload/v1693749110/chocoInc/white-chocolate_szo4me.jpg",
+      "https://res.cloudinary.com/freakingspicy/image/upload/v1694087216/chocoInc/white-chocolate_z9zula.jpg",
     alt: "white chocolate",
   },
   {

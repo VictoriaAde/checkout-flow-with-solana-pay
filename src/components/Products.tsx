@@ -19,20 +19,20 @@ export default function Products({ submitTarget, enabled }: Props) {
       className="flex flex-col gap-8"
     >
       <div className="flex flex-col gap-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => {
             return (
               <div
-                className="rounded-md bg-[#010101] border  border-[#232323] text-center py-8 px-4"
+                className="rounded-md bg-[#010101] border  border-[#232323] text-center p-8"
                 key={product.id}
               >
-                <div className="mb-6">
+                <div className="mb-6 flex justify-center">
                   <Image
                     src={product.image}
                     alt={product.alt}
                     width="200"
                     height="100"
-                    className="w-full h-72 md:h-96"
+                    className="object-cover w-[200px] h-[200px]"
                   />
                 </div>
                 <div>
