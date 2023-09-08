@@ -42,8 +42,8 @@ export default function NumberInput({ name, formRef }: Props) {
         onClick={decrement}
         onKeyDown={handleKeyboard}
       >
-        <span className="m-auto text-2xl font-thin">
-          <BiMinus color="white" />
+        <span className="m-auto text-2xl text-white">
+          <BiMinus color="#fff" />
         </span>
       </button>
       <input
@@ -61,8 +61,8 @@ export default function NumberInput({ name, formRef }: Props) {
         onClick={increment}
         onKeyDown={handleKeyboard}
       >
-        <span className="m-auto text-2xl font-thin">
-          <BsPlus color="white" />
+        <span className="m-auto text-2xl text-white">
+          <BsPlus color="#fff" />
         </span>
       </button>
     </div>
