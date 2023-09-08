@@ -12,7 +12,7 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = () => {
 
       {/* <PageHeading>Thankyou, enjoy your cookies!</PageHeading> */}
 
-      <div className="bg-inherit p-8 rounded-lg shadow-md border  border-[#232323]">
+      <div className="bg-inherit text-center p-8 rounded-lg shadow-md border  border-[#232323]">
         <h2 className="text-2xl font-bold text-[#50EA95]  mb-4">
           Payment Successful
         </h2>
