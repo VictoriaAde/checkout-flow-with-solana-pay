@@ -1,5 +1,5 @@
 import Confirmed from "@/components/Confirmed";
-import BackLink from "../components/BackLink";
+import BackLink from ".././components/BackLink";
 
 interface PaymentSuccessProps {
   // You can pass any additional data or props you need here
@@ -8,18 +8,18 @@ interface PaymentSuccessProps {
 const PaymentSuccess: React.FC<PaymentSuccessProps> = () => {
   return (
     <div className="flex flex-col gap-4 items-center mt-28">
-      <BackLink href="/">Home</BackLink>
+      <BackLink href="/">Next order</BackLink>
 
-      <div className="bg-none p-8 rounded-lg shadow-md text-center">
-        <h2 className="text-2xl font-bold text-[#50EA95] mb-4">
+      {/* <PageHeading>Thankyou, enjoy your cookies!</PageHeading> */}
+
+      <div className="bg-inherit p-8 rounded-lg shadow-md border  border-[#232323]">
+        <h2 className="text-2xl font-bold text-[#50EA95]  mb-4">
           Payment Successful
         </h2>
-        <h3 className="text-lg text-[#50EA95] mb-8">
-          Thank you for your purchase! Your payment was successful.
-        </h3>
-        <div className="">
-          <Confirmed />
-        </div>
+        <p className="text-base text-white  mb-8">
+          Thank you, enjoy your chocolates :)
+        </p>
+        <Confirmed />
         {/* You can add more information or links as needed */}
       </div>
     </div>
