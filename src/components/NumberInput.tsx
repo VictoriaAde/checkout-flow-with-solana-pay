@@ -43,7 +43,7 @@ export default function NumberInput({ name, formRef }: Props) {
         onKeyDown={handleKeyboard}
       >
         <span className="m-auto text-2xl font-thin">
-          <BiMinus />
+          <BiMinus color="white" />
         </span>
       </button>
       <input
@@ -62,7 +62,7 @@ export default function NumberInput({ name, formRef }: Props) {
         onKeyDown={handleKeyboard}
       >
         <span className="m-auto text-2xl font-thin">
-          <BsPlus />
+          <BsPlus color="white" />
         </span>
       </button>
     </div>
