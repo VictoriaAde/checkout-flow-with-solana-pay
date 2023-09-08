@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { products } from "../lib/products";
 import NumberInput from "./NumberInput";
 import Image from "next/image";
@@ -10,6 +10,22 @@ interface Props {
 
 export default function Products({ submitTarget, enabled }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
+
+  // Initialize state to track selected quantities
+  const [selectedQuantities, setSelectedQuantities] = useState<{
+    [key: string]: number;
+  }>({});
+
+  // Function to update selected quantities
+  const handleQuantityChange = (productId: string, quantity: number) => {
+    setSelectedQuantities((prevQuantities: any) => ({
+      ...prevQuantities,
+      [productId]: quantity,
+    }));
+  };
+
+  // Calculate 'enabled' based on whether any product has a quantity greater than 0
+  enabled = Object.values(selectedQuantities).some((quantity) => quantity > 0);
 
   return (
     <form
@@ -54,7 +70,11 @@ export default function Products({ submitTarget, enabled }: Props) {
                     )}
                   </p>
                   <div className="mt-1 flex items-center justify-center">
-                    <NumberInput name={product.id} formRef={formRef} />
+                    <NumberInput
+                      onQuantityChange={handleQuantityChange}
+                      name={product.id}
+                      formRef={formRef}
+                    />
                   </div>
                 </div>
               </div>

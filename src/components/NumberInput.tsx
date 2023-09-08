@@ -5,17 +5,24 @@ import { BiMinus } from "react-icons/bi";
 interface Props {
   name: string;
   formRef: React.RefObject<HTMLFormElement>;
+  onQuantityChange: (productId: string, quantity: number) => void;
 }
 
-export default function NumberInput({ name, formRef }: Props) {
+export default function NumberInput({
+  name,
+  formRef,
+  onQuantityChange,
+}: Props) {
   const [number, setNumber] = useState(0);
 
   function decrement() {
     setNumber((n) => (n > 0 ? n - 1 : 0));
+    onQuantityChange(name, number - 1);
   }
 
   function increment() {
     setNumber((n) => n + 1);
+    onQuantityChange(name, number + 1);
   }
 
   function handleKeyboard(e: React.KeyboardEvent<HTMLButtonElement>) {
@@ -31,6 +38,13 @@ export default function NumberInput({ name, formRef }: Props) {
       e.preventDefault();
       formRef.current?.submit();
     }
+  }
+
+  // Add an onChange handler for the input element
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const newValue = parseInt(event.target.value, 10) || 0;
+    setNumber(newValue);
+    onQuantityChange(name, newValue);
   }
 
   return (
@@ -50,8 +64,10 @@ export default function NumberInput({ name, formRef }: Props) {
         type="number"
         name={name}
         value={number}
-        onChange={(e) => setNumber(Number(e.target.value))}
+        onChange={handleInputChange}
         min={0}
+        max={10}
+        step={1}
         className="w-full text-center border-none focus:ring-0 text-white bg-black font-bold"
       />
       <button
