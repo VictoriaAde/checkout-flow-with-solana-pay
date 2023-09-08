@@ -8,7 +8,7 @@ interface Props {
 
 export default function BackLink({ children, href }: PropsWithChildren<Props>) {
   return (
-    <Link href={href} className="flex items-center gap-2 mb-10 ">
+    <Link href={href} className="flex items-center gap-2 mb-10 text-white ">
       <ImArrowLeft />
       <span className="underline hover:no-underline">{children}</span>
     </Link>

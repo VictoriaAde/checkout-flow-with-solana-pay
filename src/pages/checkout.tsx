@@ -107,7 +107,7 @@ export default function Checkout() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-8 mt-20">
+    <div className="flex flex-col items-center gap-8 mt-20 text-white">
       <BackLink href="/">Go back</BackLink>
 
       <PageHeading>Checkout: ${amount.toString()}</PageHeading>
