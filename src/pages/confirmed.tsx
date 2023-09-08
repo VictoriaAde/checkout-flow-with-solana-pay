@@ -17,7 +17,7 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = () => {
           Payment Successful
         </h2>
         <p className="text-base text-white  mb-8">
-          Thank you, enjoy your chocolates :)
+          Thank you, enjoy your chocolates 🍫
         </p>
         <Confirmed />
         {/* You can add more information or links as needed */}

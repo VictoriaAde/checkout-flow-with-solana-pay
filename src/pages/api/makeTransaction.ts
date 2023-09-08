@@ -35,7 +35,7 @@ type ErrorOutput = {
 function get(res: NextApiResponse<MakeTransactionGetResponse>) {
   res.status(200).json({
     label: "Choco Inc",
-    icon: "https://freesvg.org/img/1370962427.png",
+    icon: "https://freesvg.org/img/chocolate-publicdomainvectors.png",
   });
 }
 
@@ -126,7 +126,7 @@ async function post(
     // Return the serialized transaction
     res.status(200).json({
       transaction: base64,
-      message: "Thanks for your order! 🍪",
+      message: "Thanks for your order! 🍫",
     });
   } catch (err) {
     console.error(err);

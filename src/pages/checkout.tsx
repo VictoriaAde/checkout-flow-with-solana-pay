@@ -57,7 +57,7 @@ export default function Checkout() {
     const urlParams: TransactionRequestURLFields = {
       link: new URL(apiUrl),
       label: "Choco Inc",
-      message: "Thanks for your order! 🍪",
+      message: "Thanks for your order! 🍫",
     };
     const solanaUrl = encodeURL(urlParams);
     const qr = createQR(solanaUrl, 300, "transparent");
